@@ -1,10 +1,5 @@
 import express from 'express';
 
-import webpack from 'webpack';
-import webpackConfig from '../../webpack.config';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-
 import React from 'react';
 import { RoutingContext, match } from 'react-router';
 import { Provider } from 'react-redux';
@@ -28,7 +23,7 @@ const renderFullPage = (html, initialState) => {
       <body>
         <div id="root">${html}</div>
         <script>
-          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}; 
+          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
         </script>
         <script src="/static/bundle.js"></script>
       </body>
@@ -36,11 +31,15 @@ const renderFullPage = (html, initialState) => {
   `;
 }
 
-if(process.env.NODE_ENV !== 'production'){
-  const compiler = webpack(webpackConfig);
-  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }));
-  app.use(webpackHotMiddleware(compiler));
-}else{
+if(process.env.NODE_ENV !== 'production') {
+  const webpack = require('webpack')
+  const webpackDevMiddleware = require('webpack-dev-middleware')
+  const webpackHotMiddleware = require('webpack-hot-middleware')
+  const webpackConfig = require('../webpack.config.dev')
+  const compiler = webpack(webpackConfig)
+  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }))
+  app.use(webpackHotMiddleware(compiler))
+} else {
   app.use('/static', express.static(__dirname + '/../../dist'));
 }
 
