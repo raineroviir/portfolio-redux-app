@@ -8,8 +8,12 @@
     padding:20px 20px 0 20px;
     box-shadow:1px 2px 2px #eaeaea;
     border:1px solid #eaeaea;
+
 }
 
+.portfolio_item:hover {
+	opacity: 0.6;
+}
 .portfolio_item h2 {
     font-size: 24px;
     margin: 20px 0 20px 0;
@@ -34,7 +38,7 @@
 .portfolio_item .role {
     float: left;
     color: #1db7a9;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     text-transform:uppercase;
     margin: 16px 10px 10px 10px;
@@ -62,6 +66,18 @@
 
 .goldmans {
 	background:#fff url(assets/goldmans.jpg) top no-repeat;
+}
+
+.SlackCloneChatView {
+	background:#fff url(assets/SlackCloneChatViewFinal.png) top no-repeat;
+}
+
+.Spotify3xWelcomePage {
+	background:#fff url(assets/Spotify3xWelcomePage.png) top no-repeat;
+}
+
+.Spotify3xPlaylist {
+	background:#fff url(assets/Spotify3xPlaylistPage.png) top no-repeat;
 }
 
 .orange {

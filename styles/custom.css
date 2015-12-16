@@ -102,13 +102,13 @@ ul.clients li.shipserv-logo {
 * Skill Boxes on Home Page
 */
 
-.skill-item {
+.skill-item div {
    float:left;
    margin: 0 3.5em 2em 0;
    font-size:0.8em;
 }
 
-.skill-item h4 {
+.skill-item h4 div {
    font-size:20px;
    font-weight:bold;
 }
@@ -120,13 +120,13 @@ ul.clients li.shipserv-logo {
    text-shadow:1px 1px 1px #666;
 }
 
-.skill-item ul{
+.skill-item ul div {
    list-style:none;
    padding-left:0;
    font-size:16px;
 }
 
-.skill-item ul li {
+.skill-item ul li div {
    display:inline-block;
    float:left;
    clear:both;
@@ -136,19 +136,19 @@ ul.clients li.shipserv-logo {
    padding-left:2em;
 }
 
-.skill-item ul li em {
+.skill-item ul li em div {
    background: #1db7a9;
    display:inline-block;
    float:left;
    color:#fff;
    padding:0.2em 1em 0.2em;
    margin:0.2em;
-   clear:both; 
-   font-style:normal; 
+   clear:both;
+   font-style:normal;
    box-shadow:1px 1px 1px #ccc;
 }
 
-.skill-item ul ul li em {
+.skill-item ul ul li em div {
    background: #d9ead3;
    color: #1db7a9;
 }

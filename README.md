@@ -21,7 +21,7 @@ http://localhost:3002
 
 ## Releasing to Production
 
-Production has Devtools, logging and hot reloading middleware removed and the scripts/css compressed. 
+Production has Devtools, logging and hot reloading middleware removed and the scripts/css compressed.
 
 In the project's directory, run the following commands:
 
@@ -42,4 +42,5 @@ http://localhost:3002
 
 ## Credit
 
+This app was built by callumrimmer, I borrowed his code extensively please check out the original repo for more.  I added and customized some things but am super grateful for the open source code.
 App template was based on [Lanyon Theme](https://github.com/poole/lanyon) by [mdo](https://github.com/mdo)

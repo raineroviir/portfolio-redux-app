@@ -83,9 +83,9 @@ if (process.env.NODE_ENV === 'production') {
     ],
     plugins : [
       new webpack.HotModuleReplacementPlugin()
-    ]  
+    ]
   });
-  
+
 }
 
 module.exports = webpackConfig;

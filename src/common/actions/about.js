@@ -17,7 +17,7 @@ export function invalidateRepos(repos) {
 export function fetchRepos() {
   return {
     type: REPOS_GET,
-    promise: request.get(`https://api.github.com/users/caljrimmer/repos`)
+    promise: request.get(`https://api.github.com/users/raineroviir/repos`)
   }
 }
 
