@@ -63,41 +63,6 @@ ul.clients li {
    box-shadow:1px 1px 1px #ccc;
 }
 
-ul.clients li.goldmans-logo {
-   background: url('assets/goldmans-logo.jpg') no-repeat;
-   width:124px;
-}
-
-ul.clients li.orange-logo {
-   background: url('assets/orange-logo.jpg') no-repeat;
-   width:70px;
-}
-
-ul.clients li.tesco-logo {
-   background: url('assets/tesco-logo.jpg') no-repeat;
-   width:181px;
-}
-
-ul.clients li.timeout-logo {
-   background: url('assets/timeout-logo.jpg') no-repeat;
-   width:151px;
-}
-
-ul.clients li.wiley-logo {
-   background: url('assets/wiley-logo.jpg') no-repeat;
-   width:169px;
-}
-
-ul.clients li.covestor-logo {
-   background: url('assets/covestor-logo.jpg') no-repeat;
-   width:218px;
-}
-
-ul.clients li.shipserv-logo {
-   background: url('assets/shipserv-logo.jpg') no-repeat;
-   width:218px;
-}
-
 /**
 * Skill Boxes on Home Page
 */
