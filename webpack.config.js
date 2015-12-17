@@ -2,12 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 var merge = require('merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CleanPlugin = require('clean-webpack-plugin');
 
 var webpackConfig = {
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(__dirname, './static/dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/dist/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -38,9 +39,10 @@ if (process.env.NODE_ENV === 'production') {
           NODE_ENV: JSON.stringify('production')
         }
       }),
+      new CleanPlugin(['./static/dist']),
       new ExtractTextPlugin("app.css"),
       new webpack.optimize.UglifyJsPlugin({minimize: true})
-    ]  
+    ]
   });
 
 }else{

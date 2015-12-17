@@ -1,10 +1,12 @@
 import express from 'express';
-
+import path from 'path';
 import React from 'react';
 import { RoutingContext, match } from 'react-router';
 import { Provider } from 'react-redux';
 import createLocation from 'history/lib/createLocation';
 import { fetchComponentDataBeforeRender } from '../common/api/fetchComponentDataBeforeRender';
+
+import reactDOMServer from 'react-dom/server'
 
 import configureStore from '../common/store/configureStore';
 import routes from '../common/routes';
@@ -13,24 +15,27 @@ import packagejson from '../../package.json';
 const app = express();
 process.env.PORT = process.env.PORT || 3000;
 
-const renderFullPage = (html, initialState) => {
+function renderFullPage(html, initialState) {
   return `
     <!doctype html>
-    <html>
+    <html lang="en">
       <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="/static/dist/app.css" />
         <meta charset="utf-8">
-        <title>Full Stack Web Developer based in London</title>
-        <link rel="stylesheet" type="text/css" href="/static/app.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <title>Full Stack Web Developer based in Seattle</title>
       </head>
       <body>
-        <div id="root">${html}</div>
+        <div id="react">${html}</div>
         <script>
-          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
+          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
         </script>
-        <script src="/static/bundle.js"></script>
+        <script src="/dist/bundle.js"></script>
       </body>
     </html>
-  `;
+  `
 }
 
 if(process.env.NODE_ENV !== 'production') {
@@ -41,9 +46,9 @@ if(process.env.NODE_ENV !== 'production') {
   const compiler = webpack(webpackConfig)
   app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }))
   app.use(webpackHotMiddleware(compiler))
-} else {
-  app.use('/static', express.static(__dirname + '/../../dist'));
 }
+
+app.use(express.static(path.join(__dirname, '..', 'static')));
 
 app.get('/*', function (req, res) {
 
@@ -63,30 +68,21 @@ app.get('/*', function (req, res) {
 
     const InitialView = (
       <Provider store={store}>
-        {() =>
           <RoutingContext {...renderProps} />
-        }
       </Provider>
     );
-
-    //This method waits for all render component promises to resolve before returning to browser
-    fetchComponentDataBeforeRender(store.dispatch, renderProps.components, renderProps.params)
-      .then(html => {
-        const componentHTML = React.renderToString(InitialView);
-        const initialState = store.getState();
-        res.status(200).end(renderFullPage(componentHTML,initialState))
-      })
-      .catch(err => {
-        console.log(err)
-        res.end(renderFullPage("",{}))
-      });
-
+    const initialState = store.getState();
+    const html = reactDOMServer.renderToString(InitialView);
+    res.status(200).end(renderFullPage(html, initialState));
   });
 
 });
 
-const server = app.listen(process.env.PORT, function () {
-  const host = server.address().address;
-  const port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
-});
+app.listen(process.env.PORT, (error) => {
+  if (error) {
+    console.error(error)
+  } else {
+    console.info(`==> 🌎  Listening on port ${process.env.PORT}. Open up http://localhost:${process.env.PORT}/ in your browser.`
+    )
+  }
+})
