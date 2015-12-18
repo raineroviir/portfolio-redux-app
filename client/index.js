@@ -1,4 +1,5 @@
 import 'babel-core/polyfill';
+import "../styles/index.css";
 import React from 'react';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';
@@ -9,7 +10,6 @@ import createBrowserHistory from 'history/lib/createBrowserHistory'
 import configureStore from '../common/store/configureStore';
 import routes from '../common/routes';
 
-import "../../styles/index.css";
 
 const history = createBrowserHistory();
 const initialState = window.__INITIAL_STATE__;
@@ -24,7 +24,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-if (process.env.NODE_ENV !== 'production') {
-  require('../server/devtools')(store);
-}

@@ -21,10 +21,11 @@ class Portfolio extends Component {
 
     const PortfolioRows = portfolio.map((row) => {
       return (
-        <container>
+        <container key={row.title}>
           <div className='portfolio_item'>
+            <a href={row.link} target="_blank">
             <p style={{fontWeight: 'bold', fontSize: '2em', textAlign: 'center'}}>{row.title}</p>
-            <a href={row.link} target="_blank"><div key={row.title} className={row.classname}>
+            <div key={row.title} className={row.classname}>
             <h2></h2>
             <h2></h2>
       			</div>

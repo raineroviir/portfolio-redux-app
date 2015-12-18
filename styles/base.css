@@ -50,7 +50,7 @@ body {
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #1db7a9;
+  color: #505050;
   text-decoration: none;
 }
 a strong {
@@ -427,7 +427,7 @@ a.pagination-item:hover {
    clear: both;
    height: 0;
  }
-     
+
 .clearfix { display: inline-block; }
 /* start commented backslash hack \*/
 * html .clearfix { height: 1%; }

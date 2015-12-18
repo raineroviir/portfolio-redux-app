@@ -31,6 +31,7 @@ class Home extends Component {
             })
             }
         </div>
+        <h3><a href="/portfolio">Take me back to the portfolio</a></h3>
       </container>
     );
   }

@@ -38,7 +38,7 @@ body {
   height: 35%;
   width: 35%;
   animation: pulse 0.75s ease-in infinite alternate;
-  background-color: #1db7a9;
+  background-color: #505050;
 }
 
 .an_delay {
@@ -102,7 +102,7 @@ ul.clients li {
 }
 
 .skill-item ul li em div {
-   background: #1db7a9;
+   background: #505050;
    display:inline-block;
    float:left;
    color:#fff;
@@ -115,7 +115,7 @@ ul.clients li {
 
 .skill-item ul ul li em div {
    background: #d9ead3;
-   color: #1db7a9;
+   color: #505050;
 }
 
 .exclaimation {
@@ -128,7 +128,7 @@ ul.clients li {
 */
 
 .contact-banner {
-  background:#1db7a9;
+  background:#505050;
   color:#d9ead3;
   text-align:center;
 }

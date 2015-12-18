@@ -4,13 +4,11 @@ import React from 'react';
 import { RoutingContext, match } from 'react-router';
 import { Provider } from 'react-redux';
 import createLocation from 'history/lib/createLocation';
-import { fetchComponentDataBeforeRender } from '../common/api/fetchComponentDataBeforeRender';
 
 import reactDOMServer from 'react-dom/server'
 
 import configureStore from '../common/store/configureStore';
 import routes from '../common/routes';
-import packagejson from '../../package.json';
 
 const app = express();
 process.env.PORT = process.env.PORT || 3000;
@@ -20,15 +18,14 @@ function renderFullPage(html, initialState) {
     <!doctype html>
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="/static/dist/app.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
         <title>Full Stack Web Developer based in Seattle</title>
       </head>
       <body>
-        <div id="react">${html}</div>
+        <div id="root">${html}</div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
         </script>

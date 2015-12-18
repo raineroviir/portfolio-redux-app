@@ -4,7 +4,6 @@ import React from "react";
 import App from "./containers/App";
 
 //Redux Smart
-import AboutPage from "./containers/AboutPage";
 import HomePage from "./containers/HomePage";
 
 //Redux Dumb
@@ -14,7 +13,7 @@ import error404 from "./components/404";
 
 export default (
   <Route name="app" path="/" component={App}>
-    <IndexRoute path="/portfolio" component={PortfolioPage} />
+    <IndexRoute component={PortfolioPage} />
       <Route path="home" component={HomePage} />
       <Route path="portfolio" component={PortfolioPage} />
       <Route path="*" component={error404}/>

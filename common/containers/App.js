@@ -30,14 +30,12 @@ class App extends Component {
 
     return (
       <div className={layoutClass}>
-        <Sidebar layout={layout} toggleSidebar={toggleSidebar} />
   	    <div className="wrap">
           <Header />
           <div className="container content">
             {this.props.children}
           </div>
         </div>
-        <label className="sidebar-toggle" onClick={this.eventToggleSidebar}></label>
       </div>
     );
   }

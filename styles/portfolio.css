@@ -12,7 +12,7 @@
 }
 
 .portfolio_item:hover {
-	opacity: 0.6;
+	opacity: 0.8;
 }
 .portfolio_item h2 {
     font-size: 24px;
@@ -37,7 +37,7 @@
 
 .portfolio_item .role {
     float: left;
-    color: #1db7a9;
+    color: #505050;
     font-size: 20px;
     font-weight: bold;
     text-transform:uppercase;
@@ -50,7 +50,7 @@
     font-size: 22px;
     font-weight: bold;
     margin: 10px;
-    color: #1db7a9;
+    color: #505050;
     line-height: 24px;
     text-align: right;
 }
