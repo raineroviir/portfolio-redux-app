@@ -3,12 +3,6 @@
 */
 
 .portfolio_item {
-	left: right;
-    margin: 0 0 20px 0;
-    padding:20px 20px 0 20px;
-    box-shadow:1px 2px 2px #eaeaea;
-    border:1px solid #eaeaea;
-
 }
 
 .portfolio_item:hover {

@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -16,6 +17,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('./styles/index.css'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
@@ -58,7 +60,7 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          loader: 'style!css'
+          loader: ExtractTextPlugin.extract('style', 'css!')
         }]
     }
 };
