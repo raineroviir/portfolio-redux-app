@@ -8,7 +8,6 @@ import * as LayoutActions from '../actions/layout';
 
 import Home from '../components/Home'
 import Header from '../components/layout/Header'
-import Sidebar from '../components/layout/Sidebar'
 
 class App extends Component {
 

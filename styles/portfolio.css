@@ -8,51 +8,6 @@
 .portfolio_item:hover {
 	opacity: 0.8;
 }
-.portfolio_item h2 {
-    font-size: 24px;
-    margin: 20px 0 20px 0;
-    text-align: right;
-    padding-top: 250px;
-    text-transform:uppercase;
-    font-weight:bold;
-}
-
-.portfolio_item h2 a {
-    font-size: 14px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.portfolio_item .role_wrapper {
-    border-bottom: 1px dotted #ccc;
-    position: relative;
-    margin-bottom:20px;
-}
-
-.portfolio_item .role {
-    float: left;
-    color: #505050;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform:uppercase;
-    margin: 16px 10px 10px 10px;
-    opacity:0.5;
-}
-
-.portfolio_item .role_title {
-    float: right;
-    font-size: 22px;
-    font-weight: bold;
-    margin: 10px;
-    color: #505050;
-    line-height: 24px;
-    text-align: right;
-}
-
-.portfolio_item span.role_skills {
-    font-size: 18px;
-    color: #a6a6a6;
-}
 
 /**
 * Individual

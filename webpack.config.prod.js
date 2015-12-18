@@ -1,7 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
 var CleanPlugin = require('clean-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -21,7 +20,6 @@ module.exports = {
       }
     }),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('./styles/index.css'),
     new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -65,7 +63,7 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css!')
+      loader: 'style-loader!css-loader'
     }]
   }
 };
